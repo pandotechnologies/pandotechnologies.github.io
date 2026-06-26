@@ -127,7 +127,7 @@ h3{font-size:1.15rem;margin-bottom:.5rem}
 .contracts strong{color:var(--txt);font-weight:600}
 
 /* people */
-.people{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
+.people{display:grid;grid-template-columns:repeat(5,1fr);gap:1.2rem}
 .person{
   background:var(--panel);border:1px solid var(--line);border-radius:10px;
   overflow:hidden;transition:border-color .15s;
@@ -164,7 +164,7 @@ h3{font-size:1.15rem;margin-bottom:.5rem}
 @media (max-width:860px){
   .hero-grid,.contracts-grid,.contact-grid{grid-template-columns:1fr;gap:2rem}
   .cards{grid-template-columns:1fr}
-  .people{grid-template-columns:repeat(2,1fr)}
+  .people{grid-template-columns:repeat(3,1fr)}
   .nav nav{gap:1rem}
   .nav nav a:not(.cta){display:none}
   main{padding:0 1.2rem}
