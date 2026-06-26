@@ -154,13 +154,14 @@
       <h2>Let's scope it.</h2>
       <p class="lede">Whether you have a defined solicitation or a problem that needs shaping, we respond fast and in plain English.</p>
     </header>
-    <form class="contact-form" onsubmit="event.preventDefault(); this.querySelector('.form-out').textContent='Thanks — we will reach out within one business day.';">
+    <form class="contact-form" method="post" enctype="text/plain"
+          onsubmit="const f=this; const s=[f.name,f.email].map(x=>x.value); const body=(f.org.value?`Agency/Org: ${f.org.value}\n\n`:``)+`Message:\n${f.msg.value}`; this.action='mailto:alex.m@xwell.dev?subject=' + encodeURIComponent('Pando site inquiry — ' + (s.join(' / ')||'contact')) + '&body=' + encodeURIComponent(body);">
       <label>Name<input type="text" name="name" required></label>
       <label>Agency / Organization<input type="text" name="org"></label>
       <label>Email<input type="email" name="email" required></label>
       <label>What are you trying to solve?<textarea name="msg" rows="4"></textarea></label>
+      <input type="hidden" name="body" value="">
       <button type="submit" class="btn">Send →</button>
-      <p class="form-out dim"></p>
     </form>
   </div>
 </section>
